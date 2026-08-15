@@ -12,6 +12,7 @@ int main(int argc, char *argv[]) {
 
   char com[1024];
   scanf("%s",com);
+  if(com=="exit") break;
   printf("%s: command not found\r\n", com);
   }
 
