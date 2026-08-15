@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
       else
         printf("%s: command not found\n", com + 5);
     }
-    else
+    else printf("GAY");
       printf("%s: command not found\r\n", com);
   }
 
