@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+void trim(char *s){
+  int i=0,j=0;
+  while(s[i]==' ') i++;
+  while(s[j++]=s[i++]);
+}
+
 int main(int argc, char *argv[]) {
   // Flush after every printf
   setbuf(stdout, NULL);
@@ -16,6 +22,7 @@ int main(int argc, char *argv[]) {
   if(!strcmp(com,"echo")){
     char output[1024];
     fgets(output,sizeof(output),stdin);
+    trim(output);
     printf("%s",output);
     continue;
   }
