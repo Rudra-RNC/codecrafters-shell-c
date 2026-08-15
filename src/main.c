@@ -18,24 +18,26 @@ int main(int argc, char *argv[])
   {
     printf("$ ");
 
-    char com[1024];
-    fgets(com, 1024, stdin);
-    com[strlen(com) - 1] = '\0';
-    if (strncmp(com, "exit",4) == 0)
+    char inp[1024];
+    fgets(inp, 1024, stdin);
+    inp[strlen(inp) - 1] = '\0';
+    char *com=strtok(inp," ");
+    char *ans=strtok(NULL,"");
+    if (strcmp(com, "exit") == 0)
     {
       break;
     }
-    else if (!strncmp(com, "echo",5))
+    else if (!strcmp(com, "echo"))
     {
-      printf("%s\n", com + 5);
+      printf("%s\n", ans);
     }
-    else if (!strncmp(com, "type", 5))
+    else if (strcmp(com, "type")==0)
     {
       printf("In Type");
-      if (!strcmp(com + 5, "echo") || !strcmp(com + 5, "exit") || !strcmp(com + 5, "type"))
-        printf("%s is a shell builtin\n", com + 5);
+      if (!strcmp(ans, "echo") || !strcmp(ans, "exit") || !strcmp(ans, "type"))
+        printf("%s is a shell builtin\n", ans);
       else
-        printf("%s: command not found\n", com + 5);
+        printf("%s: command not found\n", ans);
     }
     else 
     {
