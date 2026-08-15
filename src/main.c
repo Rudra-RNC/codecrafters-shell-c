@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
 
   char com[1024];
   fgets(com,sizeof(com),stdin);
-  command[strcspn(command, "\n")] = '\0';
+  com[strcspn(com, "\n")] = '\0';
   printf("%s: command not found\r\n", com);
 
 
