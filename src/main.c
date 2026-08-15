@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
 
   char com[1024];
   fgets(com,sizeof(com),stdin);
-  printf("%s: command not found\r\n");
+  printf("%s: command not found\r\n", com);
 
 
   return 0;
