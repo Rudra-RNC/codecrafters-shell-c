@@ -8,8 +8,8 @@ int main(int argc, char *argv[]) {
   // TODO: Uncomment the code below to pass the first stage
   printf("$ ");
 
-  char com[1000];
-  scanf("%s", &com);
+  char com[1024];
+  fgets(com,sizeof(com),stdin);
   printf("%s: command not found\r\n");
 
 
