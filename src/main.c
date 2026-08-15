@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     {
       printf("%s\n", com + 5);
     }
-    else if (!strcmp(com, "type", 5))
+    else if (!strncmp(com, "type", 5))
     {
       printf("In Type");
       if (!strcmp(com + 5, "echo") || !strcmp(com + 5, "exit") || !strcmp(com + 5, "type"))
