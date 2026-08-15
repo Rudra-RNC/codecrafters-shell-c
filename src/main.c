@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
       printf("%s\n", com + 5);
     else if (strcmp(com, "type") == 0)
     {
+      printf("In Type");
       if (!strcmp(com + 5, "echo") || !strcmp(com + 5, "exit") || !strcmp(com + 5, "type"))
         printf("%s is a shell builtin\n", com + 5);
       else
