@@ -33,7 +33,6 @@ int main(int argc, char *argv[])
     }
     else if (strcmp(com, "type")==0)
     {
-      printf("In Type");
       if (!strcmp(ans, "echo") || !strcmp(ans, "exit") || !strcmp(ans, "type"))
         printf("%s is a shell builtin\n", ans);
       else
