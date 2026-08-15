@@ -13,6 +13,11 @@ int main(int argc, char *argv[]) {
   char com[1024];
   scanf("%s",com);
   if(!strcmp(com,"exit")) break;
+  if(!strcmp(com,"echo")){
+    char output[1024];
+    fgets(output,sizeof(output),stdin);
+    printf("%s",output);
+  }
   printf("%s: command not found\r\n", com);
   }
 
