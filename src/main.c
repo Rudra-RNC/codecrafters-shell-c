@@ -22,9 +22,13 @@ int main(int argc, char *argv[])
     fgets(com, 1024, stdin);
     com[strlen(com) - 1] = '\0';
     if (strcmp(com, "exit") == 0)
+    {
       break;
+    }
     else if (!strcmp(com, "echo"))
+    {
       printf("%s\n", com + 5);
+    }
     else if (!strcmp(com, "type"))
     {
       printf("In Type");
@@ -33,8 +37,10 @@ int main(int argc, char *argv[])
       else
         printf("%s: command not found\n", com + 5);
     }
-    else printf("GAY");
+    else 
+    {
       printf("%s: command not found\r\n", com);
+    }
   }
 
   return 0;
