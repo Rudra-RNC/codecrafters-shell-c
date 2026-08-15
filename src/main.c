@@ -13,21 +13,18 @@ int main(int argc, char *argv[]) {
   setbuf(stdout, NULL);
   while (1)
   {
-  // TODO: Uncomment the code below to pass the first stage
   printf("$ ");
 
   char com[1024];
-  scanf("%s",com);
-  if(!strcmp(com,"exit")) break;
-  if(!strcmp(com,"echo")){
-    char output[1024];
-    fgets(output,sizeof(output),stdin);
-    trim(output);
-    printf("%s",output);
-    continue;
-  }
-  printf("%s: command not found\r\n", com);
-  }
+  fgets(com,1024,stdin);
+  com[strlen(com)-1]='\0';
+  if(strcmp(com,"exit")==0) break;
+  else if(!strcmp(com,"echo")) printf("%s\n",com+5);
+  else if (strcmp(com,"type")==0)
+  {
+    if(!strcmp(com+4,"echo") || !strcmp(com+4,"exit") || !strcmp(com+4,"type")) printf("%s is a shell builtin",com+4);
+    else printf("%s: command not found",com+4);
+  } else printf("%s: command not found\r\n", com);
 
   return 0;
 }
