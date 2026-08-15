@@ -5,14 +5,14 @@
 int main(int argc, char *argv[]) {
   // Flush after every printf
   setbuf(stdout, NULL);
-  while (true)
+  while (1)
   {
   // TODO: Uncomment the code below to pass the first stage
   printf("$ ");
 
   char com[1024];
   scanf("%s",com);
-  if(com=="exit") break;
+  if(com=="exit\0") break;
   printf("%s: command not found\r\n", com);
   }
 
