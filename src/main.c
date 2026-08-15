@@ -21,15 +21,15 @@ int main(int argc, char *argv[])
     char com[1024];
     fgets(com, 1024, stdin);
     com[strlen(com) - 1] = '\0';
-    if (strcmp(com, "exit") == 0)
+    if (strncmp(com, "exit",4) == 0)
     {
       break;
     }
-    else if (!strcmp(com, "echo"))
+    else if (!strncmp(com, "echo",5))
     {
       printf("%s\n", com + 5);
     }
-    else if (!strcmp(com, "type"))
+    else if (!strcmp(com, "type", 5))
     {
       printf("In Type");
       if (!strcmp(com + 5, "echo") || !strcmp(com + 5, "exit") || !strcmp(com + 5, "type"))
