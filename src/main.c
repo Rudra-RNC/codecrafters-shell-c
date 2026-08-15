@@ -17,6 +17,7 @@ int main(int argc, char *argv[]) {
     char output[1024];
     fgets(output,sizeof(output),stdin);
     printf("%s",output);
+    continue;
   }
   printf("%s: command not found\r\n", com);
   }
